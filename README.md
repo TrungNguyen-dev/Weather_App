@@ -1,16 +1,12 @@
 # weather_app
-
+# Weather
+ 
 A new Flutter project.
-
+A new Flutter application.
+ 
 ## Getting Started
-
-This project is a starting point for a Flutter application.
-
-A few resources to get you started if this is your first Flutter project:
-
-- [Lab: Write your first Flutter app](https://docs.flutter.dev/get-started/codelab)
-- [Cookbook: Useful Flutter samples](https://docs.flutter.dev/cookbook)
-
-For help getting started with Flutter development, view the
-[online documentation](https://docs.flutter.dev/), which offers tutorials,
-samples, guidance on mobile development, and a full API reference.
+## 1. Setup env
+Create .env file at root project with below properties:
+WEATHER_URL='https://api.openweathermap.org'
+WEATHER_ICON_URL='https://openweathermap.org/img/wn/{name}@2x.png'
+WEATHER_API_KEY='4496a83fcd217b8f04f8c2c57a582805'
