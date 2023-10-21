@@ -20,6 +20,7 @@ import 'package:weather_app/routes/app_router.dart';
 import 'package:weather_app/utils/extension/string.dart';
 import 'package:weather_app/utils/utils.dart';
 import 'package:weather_app/widget/bottom_sheet.dart';
+import 'package:weather_app/widget/show_dialog.dart';
 
 import 'bloc/home_bloc.dart';
 
@@ -105,6 +106,15 @@ class _HomePageState extends State<HomePage> with WidgetsBindingObserver {
                   await Geolocator.openLocationSettings();
                 }
               },
+            );
+          }
+
+          if (state.status == HomeStatus.failure) {
+            DialogApp.showFailure(
+              context,
+              content: state.errorMessage ?? 'Không tìm thấy dữ liệu.',
+              barrierDismissible: false,
+              largePadding: false,
             );
           }
         },

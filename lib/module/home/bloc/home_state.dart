@@ -18,11 +18,13 @@ class HomeState extends Equatable {
   final WeatherModel? data;
   final double? lat;
   final double? lon;
+  final String? errorMessage;
   const HomeState({
     this.status = HomeStatus.unknown,
     this.data,
     this.lat,
     this.lon,
+    this.errorMessage,
   });
 
   String? get temp => data?.getMainTemp?.ceilToDouble().format();
@@ -43,15 +45,17 @@ class HomeState extends Equatable {
     WeatherModel? data,
     double? lat,
     double? lon,
+    String? errorMessage,
   }) {
     return HomeState(
       status: status ?? this.status,
       data: data ?? this.data,
       lat: lat ?? this.lat,
       lon: lon ?? this.lon,
+      errorMessage: errorMessage,
     );
   }
 
   @override
-  List<Object?> get props => [status, data, lat, lon];
+  List<Object?> get props => [status, data, lat, lon, errorMessage];
 }
