@@ -1,0 +1,18 @@
+targets:
+  $default:
+    builders:
+      json_serializable:
+        options:
+          generic_argument_factories: true
+          include_if_null: false
+          field_rename: snake
+          explicit_to_json: true
+        generate_for:
+        - lib/domain/entities/**.dart
+
+      auto_route_generator:auto_route_generator:
+        options:
+          enable_cached_builds: true
+        generate_for:
+          - lib/module/**_page.dart
+          - lib/**routers.dart
