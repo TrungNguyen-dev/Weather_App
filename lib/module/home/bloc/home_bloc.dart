@@ -57,7 +57,10 @@ class HomeBloc extends Bloc<HomeEvent, HomeState> {
     } catch (e) {
       final error = AppError.wrap(e);
       log('load-exception-getWeatherInfo', error: error);
-      emit(state.copyWith(status: HomeStatus.failure));
+      emit(state.copyWith(
+        status: HomeStatus.failure,
+        errorMessage: error.message,
+      ));
     }
   }
 
@@ -127,7 +130,10 @@ class HomeBloc extends Bloc<HomeEvent, HomeState> {
     } catch (e) {
       final error = AppError.wrap(e);
       log('load-exception-getCoordinatesByLocationName', error: error);
-      emit(state.copyWith(status: HomeStatus.failure));
+      emit(state.copyWith(
+        status: HomeStatus.failure,
+        errorMessage: error.message,
+      ));
     }
   }
 }
