@@ -14,3 +14,6 @@ WEATHER_API_KEY='4496a83fcd217b8f04f8c2c57a582805'
 2. `flutter pub get`
 3. `flutter pub run build_runner build --delete-conflicting-outputs`
 4. `flutter run` to run app or click run button from your IDE
+
+### 3. Default country code in Vietnam
+- const _countryCode = 'VN';
